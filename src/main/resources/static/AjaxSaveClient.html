@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <title>Ajax avec l'API fetch</title>
@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 
-    <script src="script.js"></script> >
+    <script>
         // On définit la catégorie à sauvegarder
         // Note : on pourrait aussi le récupérer depuis un formulaire de saisie
         const categorieASauvegarder = {
@@ -50,12 +50,12 @@
 
         function enregistreClient() {
 
-            const categorieASauvegarder = {
+            const clientASauvegarder = {
             "libelle": "Quincaillerie",
             "description": "clous, vis, boulons"
             };
 
-            console.log("Données envoyées : %o", categorieASauvegarder);
+            console.log("Données envoyées : %o", clientASauvegarder);
             const options = {
                 method: "POST",
                 headers: { // On indique qu'on envoie du JSON
@@ -63,9 +63,9 @@
                 },
                 // On envoie les données au format JSON
                 // dans le corps de la requête
-                body: JSON.stringify(categorieASauvegarder)
+                body: JSON.stringify(clientASauvegarder)
             };
-            fetch("api/categories", options)
+            fetch("api/client", options)
                 // Si pas d'erreur réseau, on convertit le json reçu en objet javascript
                 .then(response => response.json())
                 // On affiche le résultat (même s'il y a eu une erreur de l'API)
